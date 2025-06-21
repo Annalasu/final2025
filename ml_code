@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>机器学习实验实现知识卡片</title>
+  <!-- 引入 Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 引入 Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- 引入代码高亮库 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/python.min.js"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#007acc',
+            secondary: '#e1f0fa',
+            accent: '#e83e8c',
+            neutral: '#f8f9fa',
+            dark: '#333',
+          },
+          fontFamily: {
+            sans: ['微软雅黑', 'sans-serif'],
+            mono: ['Consolas', 'monospace'],
+          },
+        },
+      }
+    }
+  </script>
+  
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .card-hover {
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+      }
+      .gradient-bg {
+        background: linear-gradient(135deg, #f0f7ff 0%, #e6f7ff 100%);
+      }
+      .text-shadow {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .transition-all-300 {
+        transition: all 0.3s ease;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-dark">
+  <div class="container mx-auto px-4 py-8 max-w-5xl">
+    <h1 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary text-center mb-8 text-shadow">
+      机器学习实验实现知识卡片
+    </h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- 线性回归卡片 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+        <div class="gradient-bg p-6 border-b-2 border-primary">
+          <h2 class="text-xl font-bold text-primary">线性回归</h2>
+        </div>
+        <div class="p-6">
+          <p class="mb-4">使用sklearn.linear_model中的LinearRegression实现线性回归</p>
+          
+          <div class="relative mb-6">
+            <div class="absolute top-2 right-2 bg-primary/10 text-primary px-2 py-1 rounded text-xs font-medium">
+              Python
+            </div>
+            <pre class="bg-dark text-white rounded-lg overflow-x-auto"><code class="language-python p-4 text-sm">import numpy as np
+from numpy import mat
+import matplotlib.pyplot as plt
+
+from sklearn import datasets
+from sklearn.linear_model import LinearRegression
+
+# 训练线性模型
+l = LinearRegression()
+l.fit(x, y)
+
+# 画图显示
+plt.scatter(x, y, s=10, alpha=0.3, c='green')
+plt.plot(x, l.predict(x), c='blue', linewidth='1')
+plt.xlabel("Number of Rooms")
+plt.ylabel("House Price")
+plt.show()</code></pre>
+          </div>
+          
+          <h3 class="text-lg font-semibold mb-3">常用方法</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><span class="text-accent font-mono">fit(X,y[,n_jobs])</span> - 拟合模型</li>
+            <li><span class="text-accent font-mono">predict(X)</span> - 求预测值（同decision_function）</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- 逻辑回归卡片 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+        <div class="gradient-bg p-6 border-b-2 border-primary">
+          <h2 class="text-xl font-bold text-primary">逻辑回归</h2>
+        </div>
+        <div class="p-6">
+          <p class="mb-4">使用sklearn.linear_model中的LogisticRegression实现逻辑回归</p>
+          
+          <div class="relative mb-6">
+            <div class="absolute top-2 right-2 bg-primary/10 text-primary px-2 py-1 rounded text-xs font-medium">
+              Python
+            </div>
+            <pre class="bg-dark text-white rounded-lg overflow-x-auto"><code class="language-python p-4 text-sm">from sklearn.linear_model import LogisticRegression
+
+# 创建实例
+LR = LogisticRegression(penalty='l2', C=10.0)
+
+# 拟合训练数据并预测
+LR = LR.fit(X_train, y_train)
+y_predict = LR.predict(X_test)</code></pre>
+          </div>
+          
+          <h3 class="text-lg font-semibold mb-3">评价指标</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>accuracy_score</strong> - 评价分类问题的准确率</li>
+            <li><strong>precision_score</strong> - 评价分类问题的查准率</li>
+            <li><strong>recall_score</strong> - 计算分类结果的召回率</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- KNN实验实现卡片 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+        <div class="gradient-bg p-6 border-b-2 border-primary">
+          <h2 class="text-xl font-bold text-primary">KNN实验实现</h2>
+        </div>
+        <div class="p-6">
+          <p class="mb-4">使用sklearn.neighbors中的KNeighborsClassifier实现KNN算法</p>
+          
+          <div class="relative mb-6">
+            <div class="absolute top-2 right-2 bg-primary/10 text-primary px-2 py-1 rounded text-xs font-medium">
+              Python
+            </div>
+            <pre class="bg-dark text-white rounded-lg overflow-x-auto"><code class="language-python p-4 text-sm">from sklearn.neighbors import KNeighborsClassifier
+
+# 创建对象
+KNN = KNeighborsClassifier(n_neighbors=k)  # k是近邻个数
+
+# 拟合数据集并预测
+KNN = KNN.fit(X_data, y_data)
+y_predict = KNN.predict(X_data)</code></pre>
+          </div>
+          
+          <h3 class="text-lg font-semibold mb-3">K折交叉验证示例</h3>
+          <div class="relative mb-4">
+            <div class="absolute top-2 right-2 bg-primary/10 text-primary px-2 py-1 rounded text-xs font-medium">
+              Python
+            </div>
+            <pre class="bg-dark text-white rounded-lg overflow-x-auto"><code class="language-python p-4 text-sm">from sklearn.model_selection import cross_val_score
+from sklearn.datasets import load_iris
+from sklearn.neighbors import KNeighborsClassifier
+
+iris = load_iris()
+X = iris.data
+Y = iris.target
+
+knn = KNeighborsClassifier(n_neighbors=k)
+scores = cross_val_score(knn, X, Y, cv=5)  # 5折交叉验证
+print(scores.mean())</code></pre>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 特征缩放卡片 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+        <div class="gradient-bg p-6 border-b-2 border-primary">
+          <h2 class="text-xl font-bold text-primary">特征缩放</h2>
+        </div>
+        <div class="p-6">
+          <p class="mb-4">使用sklearn转换器进行特征缩放处理</p>
+          
+          <h3 class="text-lg font-semibold mb-4">转换器说明</h3>
+          <div class="overflow-x-auto mb-6">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr class="bg-secondary text-primary">
+                  <th class="py-3 px-4 text-left font-semibold">函数名称</th>
+                  <th class="py-3 px-4 text-left font-semibold">说明</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr>
+                  <td class="py-3 px-4">MinMaxScaler</td>
+                  <td class="py-3 px-4">对特征进行离差标准化</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">StandardScaler</td>
+                  <td class="py-3 px-4">对特征进行标准差标准化</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">Normalizer</td>
+                  <td class="py-3 px-4">对特征进行归一化</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">Binarizer</td>
+                  <td class="py-3 px-4">对定量特征进行二值化处理</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">OneHotEncoder</td>
+                  <td class="py-3 px-4">对定性特征进行独热编码处理</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">FunctionTransformer</td>
+                  <td class="py-3 px-4">对特征进行自定义函数变换</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <h3 class="text-lg font-semibold mb-3">标准化示例</h3>
+          <div class="relative">
+            <div class="absolute top-2 right-2 bg-primary/10 text-primary px-2 py-1 rounded text-xs font-medium">
+              Python
+            </div>
+            <pre class="bg-dark text-white rounded-lg overflow-x-auto"><code class="language-python p-4 text-sm">from sklearn.preprocessing import StandardScaler
+
+# 创建对象
+StdSc = StandardScaler()
+
+# 拟合缩放参数并转换
+StdSc = StdSc.fit(X_data)
+X_scaled = StdSc.transform(X_data)
+
+# 或直接一步完成
+X_scaled = StdSc.fit_transform(X_data)</code></pre>
+          </div>
+        </div>
+      </div>
+      
+      <!-- CART算法卡片 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+        <div class="gradient-bg p-6 border-b-2 border-primary">
+          <h2 class="text-xl font-bold text-primary">CART算法原理</h2>
+        </div>
+        <div class="p-6">
+          <p class="mb-4">sklearn.tree提供了CART算法的实现方法</p>
+          
+          <h3 class="text-lg font-semibold mb-3">分类决策树 - DecisionTreeClassifier</h3>
+          <div class="relative mb-6">
+            <div class="absolute top-2 right-2 bg-primary/10 text-primary px-2 py-1 rounded text-xs font-medium">
+              Python
+            </div>
+            <pre class="bg-dark text-white rounded-lg overflow-x-auto"><code class="language-python p-4 text-sm">sklearn.tree.DecisionTreeClassifier(
+    criterion='gini',
+    splitter='best',
+    max_depth=None,
+    min_samples_split=2,
+    min_samples_leaf=1,
+    min_weight_fraction_leaf=0.0,
+    max_features=None,
+    random_state=None,
+    max_leaf_nodes=None,
+    class_weight=None,
+    presort=False
+)</code></pre>
+          </div>
+          
+          <h3 class="text-lg font-semibold mb-3">回归决策树 - DecisionTreeRegressor</h3>
+          <div class="relative">
+            <div class="absolute top-2 right-2 bg-primary/10 text-primary px-2 py-1 rounded text-xs font-medium">
+              Python
+            </div>
+            <pre class="bg-dark text-white rounded-lg overflow-x-auto"><code class="language-python p-4 text-sm">sklearn.tree.DecisionTreeRegressor(
+    criterion='mse',
+    splitter='best',
+    max_depth=None,
+    min_samples_split=2,
+    min_samples_leaf=1,
+    min_weight_fraction_leaf=0.0,
+    max_features=None,
+    random_state=None,
+    max_leaf_nodes=None,
+    min_impurity_decrease=0.0,
+    min_impurity_split=None,
+    presort=False
+)</code></pre>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 线性支持向量机卡片 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+        <div class="gradient-bg p-6 border-b-2 border-primary">
+          <h2 class="text-xl font-bold text-primary">线性支持向量机</h2>
+        </div>
+        <div class="p-6">
+          <p class="mb-4">使用sklearn.svm中的LinearSVC实现线性SVM</p>
+          
+          <div class="relative">
+            <div class="absolute top-2 right-2 bg-primary/10 text-primary px-2 py-1 rounded text-xs font-medium">
+              Python
+            </div>
+            <pre class="bg-dark text-white rounded-lg overflow-x-auto"><code class="language-python p-4 text-sm">import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.svm import LinearSVC
+from sklearn.datasets import make_blobs
+
+# 创建随机分布的可分离样本点
+X, y = make_blobs(n_samples=400, centers=2, random_state=32)
+
+# 创建LinearSVC对象
+clf = LinearSVC(C=10)
+clf.fit(X, y)
+
+# 绘制样本点
+plt.scatter(X[:, 0], X[:, 1], c=y, s=30, cmap=plt.cm.Paired)
+
+# 画出决策函数
+ax = plt.gca()
+xlim = ax.get_xlim()
+ylim = ax.get_ylim()
+
+# 网格化评价模型
+xx = np.linspace(xlim[0], xlim[1], 30)
+yy = np.linspace(ylim[0], ylim[1], 30)
+YY, XX = np.meshgrid(yy, xx)
+xy = np.vstack([XX.ravel(), YY.ravel()]).T
+Z = clf.decision_function(xy).reshape(XX.shape)
+
+# 画分类边界
+ax.contour(XX, YY, Z, colors='k', levels=[-1, 0, 1], 
+           alpha=0.5, linestyles=['--', '-', '--'])
+plt.title("Maximum margin using LinearSVC")
+plt.show()</code></pre>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 随机森林卡片 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+        <div class="gradient-bg p-6 border-b-2 border-primary">
+          <h2 class="text-xl font-bold text-primary">随机森林分类器</h2>
+        </div>
+        <div class="p-6">
+          <p class="mb-4">sklearn.ensemble提供了随机森林分类器</p>
+          
+          <div class="relative mb-6">
+            <div class="absolute top-2 right-2 bg-primary/10 text-primary px-2 py-1 rounded text-xs font-medium">
+              Python
+            </div>
+            <pre class="bg-dark text-white rounded-lg overflow-x-auto"><code class="language-python p-4 text-sm">sklearn.ensemble.RandomForestClassifier(
+    n_estimators=10,
+    criterion='gini',
+    max_depth=None,
+    min_samples_split=2,
+    min_samples_leaf=1,
+    min_weight_fraction_leaf=0.0,
+    max_features='auto',
+    max_leaf_nodes=None,
+    bootstrap=True,
+    oob_score=False,
+    n_jobs=1,
+    random_state=None,
+    verbose=0,
+    warm_start=False
+)</code></pre>
+          </div>
+          
+          <div class="bg-secondary/50 p-5 rounded-lg mb-3">
+            <h3 class="text-lg font-semibold mb-3 flex items-center">
+              <i class="fa fa-info-circle text-primary mr-2"></i> 关键参数说明
+            </h3>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><span class="text-accent font-mono">n_estimators</span> - 森林中树的数量</li>
+              <li><span class="text-accent font-mono">criterion</span> - 分裂特征的标准（'gini'或'entropy'）</li>
+              <li><span class="text-accent font-mono">max_depth</span> - 树的最大深度</li>
+              <li><span class="text-accent font-mono">max_features</span> - 寻找最佳分割时考虑的特征数量</li>
+              <li><span class="text-accent font-mono">bootstrap</span> - 是否使用有放回抽样</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // 初始化代码高亮
+    document.addEventListener('DOMContentLoaded', (event) => {
+      hljs.highlightAll();
+      
+      // 为卡片添加悬停效果
+      const cards = document.querySelectorAll('.card-hover');
+      cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          card.classList.add('shadow-lg');
+        });
+        card.addEventListener('mouseleave', () => {
+          card.classList.remove('shadow-lg');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
