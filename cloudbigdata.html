@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大数据课程思考题汇总</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+            line-height: 1.8;
+            background-color: #f4f7f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+        h2 {
+            color: #1a5276;
+            border-bottom: 2px solid #aed6f1;
+            padding-bottom: 10px;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+        .question-block {
+            margin-bottom: 35px;
+            padding: 20px;
+            border-left: 5px solid #3498db;
+            background-color: #f8f9fa;
+            border-radius: 0 8px 8px 0;
+        }
+        .question-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .question-title strong {
+            color: #e67e22;
+        }
+        .options-list {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .options-list li {
+            margin-bottom: 8px;
+        }
+        .answer {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #eafaf1;
+            border: 1px solid #d1f2eb;
+            border-radius: 6px;
+        }
+        .answer strong.label {
+            color: #1e8449;
+            font-weight: bold;
+        }
+        .answer-text {
+            color: #145a32;
+        }
+        .answer-text ul {
+            padding-left: 25px;
+            margin-top: 10px;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #e8eaed;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        pre {
+            background-color: #2c3e50;
+            color: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #dfe6e9;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #5dade2;
+            color: white;
+            font-weight: 600;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f4f6f7;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>大数据课程思考题汇总</h1>
+
+        <section id="ch0">
+            <h2>《第0章 课程导入.pdf》思考题</h2>
+            <div class="question-block">
+                <p class="question-title">1. <strong>单选题</strong>: IDC对大数据特征的描述以下哪些项是正确的？（ ）</p>
+                <ul class="options-list">
+                    <li>A. Volume-巨量</li>
+                    <li>B. Variety-多样性</li>
+                    <li>C. Value-价值密度</li>
+                    <li>D. Velocity-速度</li>
+                </ul>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案: A, B, D</strong><br>(注：资料中仅提及"IDC对大数据特征的定义"，未具体列出4V，但A、B、D为大数据的标准特征，C中的"价值密度"通常指"价值"本身而非“价值密度”)</p>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p class="question-title">2. <strong>判断题</strong>: 大数据技术的演进路线是从分布式存储到云存储，从智能分析到分布式分析。（ ）</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案: 错误</strong>。<br>资料指出大数据技术演进是从单机到分布式并行处理，强调了从传统数据库无法满足大规模数据处理需求，转变为横向扩展和分布式文件系统。"从分布式存储到云存储"并非核心演进路线，云存储更多是一种部署方式。</p>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p class="question-title">3. <strong>简答题</strong>:</p>
+                <ul>
+                    <li>
+                        <strong>大数据的特征是什么？</strong>
+                        <div class="answer">
+                            <p class="answer-text"><strong class="label">答案:</strong> 大数据的特征通常被称为“4V”：<strong>巨量 (Volume)</strong>、<strong>多样性 (Variety)</strong>、<strong>速度 (Velocity)</strong> 和 <strong>价值 (Value)</strong>。 (注：资料中提及了IDC对大数据特征的定义，但未具体展开)。</p>
+                        </div>
+                    </li>
+                    <li style="margin-top: 20px;">
+                        <strong>大数据的工作内容是什么？</strong>
+                        <div class="answer">
+                            <p class="answer-text"><strong class="label">答案:</strong> 大数据的工作内容主要包括：</p>
+                            <ul>
+                                <li><strong>数据采集</strong>: 利用多种轻型数据库接收客户端数据，并进行简单查询和处理。</li>
+                                <li><strong>数据存储</strong>: 使用Hadoop等实现对半结构化和非结构化数据的处理，支持检索、深度挖掘和综合分析。</li>
+                                <li><strong>数据分析</strong>: 将海量数据快速导入分布式数据库或存储集群，利用分布式技术进行查询和分类汇总。</li>
+                                <li><strong>数据挖掘</strong>: 基于查询数据进行数据挖掘，满足高级别数据分析需求，涉及复杂算法和大量计算。</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li style="margin-top: 20px;">
+                        <strong>数据分析的特点是什么？</strong>
+                        <div class="answer">
+                            <p class="answer-text"><strong class="label">答案:</strong> 数据分析的特点包括：</p>
+                            <ul>
+                                <li><strong>迭代性</strong>: 优化问题通常没有闭式解，需要多次循环迭代逐步逼近最优值。</li>
+                                <li><strong>容错性</strong>: 机器学习算法设计和模型评价容忍非最优值点的存在，多次迭代也允许过程中产生错误，最终收敛不受影响。</li>
+                                <li><strong>参数收敛的非均匀性</strong>: 模型中某些参数可能很快收敛，而另一些则需要较长时间。</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="ch1">
+            <h2>《第1章 数据采集系统概述.pdf》思考题</h2>
+            <div class="question-block">
+                <p class="question-title">1. <strong>判断题</strong>: Flume传输数据的过程中，Sink取走数据并写入目的地后，会将events从channel中删除。</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案: 正确</strong>。当Sink成功地将events发送到下一跳的channel或最终目的后，events会从Channel中移除。</p>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p class="question-title">2. <strong>单选题</strong>: 关于Kafka的说法不正确的是？（ ）</p>
+                <ul class="options-list">
+                    <li>A. Kafka强依赖于Zookeeper</li>
+                    <li>B. Kafka部署的实例个数不得小于2</li>
+                    <li>C. Kafka的服务端可以产生消息</li>
+                    <li>D. Consumer作为Kafka的客户端角色进行消息的消费</li>
+                </ul>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案: B和C都是不正确的。</strong></p>
+                    <ul>
+                        <li><strong>B不正确</strong>: 资料中明确指出，Kafka集群包含"一个或多个服务实例"，这些服务实例被称为Broker。因此，部署实例个数"不得小于2"的说法是错误的，理论上可以部署一个。</li>
+                        <li><strong>C不正确</strong>: 在Kafka架构中，消息的产生者是"Producer"（生产者），它们使用"push模式将消息发布到Broker"。Kafka的服务端（即Broker）主要负责接收、存储和管理消息，并为消费者提供消息，它本身不直接“产生”业务消息。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="ch2">
+            <h2>《第2章 Zookeeper分布式协调系统.pdf》思考题</h2>
+            <div class="question-block">
+                <p class="question-title">1. <strong>单选题</strong>: 当Zookeeper集群的节点数为5节点时，请问集群的容灾能力和多少节点是等价的？（ ）</p>
+                <ul class="options-list">
+                    <li>A. 3</li>
+                    <li>B. 4</li>
+                    <li>C. 6</li>
+                    <li>D. 以上都不是</li>
+                </ul>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案: C. 6</strong>。资料指出，当节点数为n=2x+1时，容灾能力为x。对于5个节点，2x+1=5，则x=2，容灾能力为2。资料中明确提到“2x+1个节点与2x+2个节点的容灾能力相同（3个与4个相同，5个与6个相同…）”，因此5个节点的容灾能力与6个节点相同。</p>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p class="question-title">2. <strong>单选题</strong>: 下面关于Zookeeper的特性描述错误的是？（ ）</p>
+                <ul class="options-list">
+                    <li>A. 客户端所发送的更新会按照他们被发送的顺序进行应用</li>
+                    <li>B. 一条消息要被超过半数的Server接收，他将可以成功写入磁盘</li>
+                    <li>C. 消息更新只能成功或失败，没有中间状态</li>
+                    <li>D. Zookeeper节点数必须为奇数个</li>
+                </ul>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案: D</strong>。资料明确指出"我们<strong>建议</strong>ZooKeeper部署奇数个节点"，而不是"必须为奇数个"。A、B、C的描述均与资料中Zookeeper的特性（顺序一致性、写流程的多数派确认、原子性）相符。</p>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p class="question-title">3. <strong>简答题</strong>:</p>
+                <ul>
+                    <li>
+                        <strong>Zookeeper的框架是什么？</strong>
+                        <div class="answer">
+                            <p class="answer-text"><strong class="label">答案:</strong> ZooKeeper集群由一组Server节点组成，其中一个节点为 <strong>Leader</strong>，其他节点为 <strong>Follower</strong>。客户端(Client)的写请求会发送给Leader，Leader将数据变更同步到所有Follower。</p>
+                        </div>
+                    </li>
+                    <li style="margin-top: 20px;">
+                        <strong>Zookeeper的功能是什么？</strong>
+                        <div class="answer">
+                            <p class="answer-text"><strong class="label">答案:</strong> Zookeeper的主要功能包括：<strong>配置管理</strong>、<strong>名字服务</strong>、<strong>分布式锁</strong>和<strong>集群管理</strong>。</p>
+                        </div>
+                    </li>
+                    <li style="margin-top: 20px;">
+                        <strong>Zookeeper的特点是什么？</strong>
+                        <div class="answer">
+                            <p class="answer-text"><strong class="label">答案:</strong> Zookeeper的特点包括：</p>
+                             <ul>
+                                <li><strong>最终一致性</strong>: 为客户端展示同一视图。</li>
+                                <li><strong>可靠性</strong>: 一条消息被一台服务器接受，则将被所有服务器接受。</li>
+                                <li><strong>实时性</strong>: 客户端能在时间间隔内获得服务器更新或失效信息，但需调用sync()获取最新数据。</li>
+                                <li><strong>等待无关 (wait-free)</strong>: 慢或失效的客户端不干扰快速客户端请求。</li>
+                                <li><strong>原子性</strong>: 更新只能成功或失败，没有中间状态。</li>
+                                <li><strong>顺序性</strong>: 客户端发送的更新会按发送顺序被应用。</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li style="margin-top: 20px;">
+                        <strong>Zookeeper如何容灾？</strong>
+                        <div class="answer">
+                            <p class="answer-text"><strong class="label">答案:</strong> ZooKeeper通过集群节点间的<strong>选举机制</strong>实现容灾。当一个实例获得超过半数的票数时，它就会成为Leader。对于n个实例的集群，其容灾能力为 <code>x</code>，其中 <code>x</code> 是在Leader选举中能够失败的节点数量，即保持多数派所需的最小节点数减一。例如，5个节点的集群，容灾能力为2，即可以容忍2个节点失败。</p>
+                        </div>
+                    </li>
+                    <li style="margin-top: 20px;">
+                        <strong>Zookeeper在大数据领域的具体应用有哪些？</strong>
+                         <div class="answer">
+                            <p class="answer-text"><strong class="label">答案:</strong> Zookeeper在大数据领域的具体应用包括：</p>
+                            <ul>
+                                <li><strong>集中式的配置管理</strong>: 应用将配置写入Zookeeper节点，并监控该节点，当数据变化时收到通知并获取最新配置。</li>
+                                <li><strong>集中式的集群管理</strong>: 各机器通过Zookeeper感知集群（或依赖集群）中哪些机器是活着的，并在机器宕机或断链时自动通知其他机器。</li>
+                                <li><strong>HDFS中的HA方案</strong>: ZKFC作为Zookeeper客户端监控NameNode状态。</li>
+                                <li><strong>YARN的HA方案</strong>。</li>
+                                <li><strong>HBase</strong>: 依赖Zookeeper保存Regionserver心跳信息及其他关键信息，HMaster通过Zookeeper感知Regionserver健康状况。</li>
+                                <li><strong>Flume</strong>: 用于负载均衡和单点故障处理。</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li style="margin-top: 20px;">
+                        <strong>Zookeeper集群如何配置？</strong>
+                        <div class="answer">
+                            <p class="answer-text"><strong class="label">答案:</strong> Zookeeper集群配置涉及到在多台机器上设置Zookeeper实例，包括修改<code>zoo.cfg</code>配置文件以定义集群成员（例如<code>server.x=hostname:port1:port2</code>）、在数据目录中创建<code>myid</code>文件来标识每个实例的ID，并分别启动Zookeeper服务。为了容灾和写操作效率，<strong>建议部署奇数个节点</strong>。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="ch3">
+            <h2>《第3章 Kafka分布式消息订阅系统.pdf》思考题</h2>
+            <div class="question-block">
+                <p class="question-title">1. <strong>简答题</strong>: 简述 Kafka 架构及其组成部分，并比较其与 Flume 的异同。</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong></p>
+                    <ul>
+                        <li>
+                            <strong>Kafka架构及其组成部分</strong>: Kafka是一个<strong>分布式、分区的、多副本的、多订阅者，基于Zookeeper协调的分布式日志系统</strong>。其核心组件包括：
+                            <ul>
+                                <li><strong>Producer (生产者)</strong>: 使用push模式将消息发布到Broker。</li>
+                                <li><strong>Broker</strong>: Kafka集群的服务实例，负责接收、存储和管理消息。</li>
+                                <li><strong>Topic (主题)</strong>: 消息的类别，可理解为存储消息的队列。</li>
+                                <li><strong>Partition (分区)</strong>: Topic被分成一个或多个Partition，保证高吞吐，分区内消息有序不可变。</li>
+                                <li><strong>Offset (偏移量)</strong>: 每条消息在文件中的唯一标记位置。</li>
+                                <li><strong>Consumer (消费者)</strong>: 使用pull模式从Broker订阅并消费消息。</li>
+                                <li><strong>Consumer Group (消费者组)</strong>: 每条消息只能被组内一个Consumer消费，但可被多个Consumer Group消费。</li>
+                                <li><strong>Replication (副本)</strong>: 每个Partition有Leader和Follower，Follower从Leader同步数据，Producer和Consumer只与Leader交互。</li>
+                                <li><strong>In-Sync Replicas (ISR)</strong>: 处于同步状态的副本集合，只有ISR成员才能被选为新的Leader。</li>
+                                <li><strong>Zookeeper集群</strong>: Kafka依赖Zookeeper管理集群配置、选举Leader以及在Consumer变化时进行rebalance。</li>
+                            </ul>
+                        </li>
+                        <li style="margin-top: 15px;">
+                            <strong>Kafka与Flume的异同</strong>:
+                             <ul>
+                                <li><strong>相同点</strong>: 两者都是日志系统；都是可靠的系统，可保证零数据丢失。</li>
+                                <li><strong>不同点</strong>:
+                                    <ul>
+                                        <li><strong>定位与功能</strong>: Kafka是<strong>分布式消息中间件</strong>，更通用。Flume是<strong>流式日志采集工具</strong>，更专注。</li>
+                                        <li><strong>消息副本</strong>: Kafka支持<strong>备份机制</strong>，可靠性更高。Flume不直接支持。</li>
+                                        <li><strong>数据处理</strong>: Flume可用<strong>拦截器</strong>简单处理数据。Kafka需<strong>外部流处理系统</strong>。</li>
+                                        <li><strong>适用场景</strong>: Kafka适用于互联网服务数据收集，支持离线在线消费。Flume适用于应用日志采集。</li>
+                                        <li><strong>流行模式</strong>: <strong>Flume + Kafka</strong> 模式很流行，结合两者优势。</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="question-block">
+                <p class="question-title">2. <strong>简答题</strong>: Kafka集群在运行期间，直接依赖于哪些组件？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong> Kafka集群在运行期间直接依赖于<strong>Zookeeper</strong>。Zookeeper用于管理集群配置、选举Leader以及在Consumer发生变化时进行rebalance。</p>
+                </div>
+            </div>
+            <div class="question-block">
+                <p class="question-title">3. <strong>简答题</strong>: Kafka与其他消息队列各个的使用场景及优缺点。</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong> 资料中详细介绍了Kafka自身的特点（如高吞吐、持久化、分布式、高容错、Scale out等），并将其与<strong>Flume</strong>进行了详细的比较。但<strong>未提供Kafka与其它通用消息队列（如RabbitMQ、ActiveMQ等）的使用场景及优缺点对比</strong>。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="ch4">
+            <h2>《第4章-Scala语言基础.pdf》思考题</h2>
+            <div class="question-block">
+                <p class="question-title">1. <strong>简答题</strong>: Scala包括哪些类型？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong> Scala的基本数据类型包括：<strong>Byte、Char、Short、Int、Long、Float、Double和Boolean</strong>。这些类型都是<code>scala</code>包的成员。此外，字符串使用<code>java.lang.String</code>类表示，还有表示空括号的<strong>Unit类型</strong>。</p>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p class="question-title">2. <strong>简答题</strong>: 变量如何定义？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong> Scala有两种类型的变量：</p>
+                    <ul>
+                        <li><strong>val</strong>: 定义不可变变量，声明时必须初始化，初始化后不能再赋值。</li>
+                        <li><strong>var</strong>: 定义可变变量，声明时需要初始化，初始化后可以再次赋值。</li>
+                        <li><strong>基本语法</strong>: <code>val 变量名:数据类型 = 初始值</code> 或 <code>var 变量名:数据类型 = 初始值</code>。</li>
+                        <li>Scala还支持<strong>类型推断机制 (type inference)</strong>，可以根据初始值自动推断变量类型，从而省略数据类型及其冒号。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p class="question-title">3. <strong>简答题</strong>: 有哪些循环语句？选择语句？跳转语句？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong></p>
+                    <ul>
+                        <li><strong>选择语句</strong>: 主要有 <code>if</code> 条件表达式。Scala中的<code>if</code>表达式的值可以赋值给变量。</li>
+                        <li><strong>循环语句</strong>: 主要有 <code>while</code> 循环 (包括<code>while</code>和<code>do-while</code>) 和 <code>for</code> 循环。<code>for</code>循环支持“生成器”和“守卫”表达式，以及“for推导式”用于生成集合。</li>
+                        <li><strong>跳转语句</strong>: Scala<strong>没有<code>break</code>和<code>continue</code>关键字</strong>。但提供了<code>scala.util.control.Breaks</code>类，通过<code>breakable</code>和<code>break</code>方法实现对循环的控制，达到类似跳转的效果。</li>
+                    </ul>
+                </div>
+            </div>
+            
+             <div class="question-block">
+                <p class="question-title">4. <strong>简答题</strong>: 数组、序列的基本应用有哪些？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong></p>
+                    <ul>
+                        <li><strong>数组 (Array)</strong>: 是一种<strong>可变的、可索引的、元素类型相同的数据集合</strong>。基本应用包括：声明定长数组、初始化数组、给数组元素赋值、访问数组元素，以及创建多维数组。</li>
+                        <li><strong>序列 (Sequence)</strong>: 是一种<strong>元素可以按照特定顺序访问的容器</strong>，每个元素带有一个从0开始计数的固定索引位置。常用序列包括<strong>列表 (List)</strong>、<strong>队列 (Queue)</strong>、<strong>可变数组 (ArrayBuffer)</strong> 和 <strong>向量 (Vector)</strong>。列表常用于通过<code>::</code>操作符在前端增加元素，并使用<code>head</code>和<code>tail</code>方法获取头尾元素。向量则支持常数时间的所有访问操作。此外还有<code>Range</code>类，用于创建等差数列。</li>
+                    </ul>
+                </div>
+            </div>
+
+             <div class="question-block">
+                <p class="question-title">5. <strong>简答题</strong>: 面向对象的基本定义方法？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong> Scala面向对象编程涉及<strong>类、对象、继承和特质</strong>等基本定义方法。</p>
+                    <ul>
+                        <li><strong>类 (Class)</strong>: 使用<code>class</code>关键字定义，包含字段（<code>val</code>/<code>var</code>定义）和方法（<code>def</code>定义）。可以通过<code>new</code>关键字创建实例。</li>
+                        <li><strong>对象 (Object)</strong>: Scala没有<code>static</code>关键字，通过<code>object</code>关键字定义<strong>单例对象</strong>，实现类似Java静态成员的功能。当单例对象与同名类一起出现时，称为<strong>伴生对象</strong>，可相互访问私有成员。</li>
+                        <li><strong>继承 (Inheritance)</strong>: 使用<code>extends</code>关键字实现单一继承。子类可以重载父类的抽象或非抽象成员，但只能重载<code>val</code>类型的字段。</li>
+                        <li><strong>特质 (Trait)</strong>: 类似Java接口，但可同时包含抽象方法和具体方法，使用<code>trait</code>关键字定义。类可以通过<code>extends</code>或<code>with</code>关键字混入一个或多个特质，实现代码重用和多重继承的功能。</li>
+                    </ul>
+                </div>
+            </div>
+
+             <div class="question-block">
+                <p class="question-title">6. <strong>简答题</strong>: 如何定义一个类？成员变量的可见性？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong></p>
+                    <ul>
+                        <li><strong>定义一个类</strong>: 使用<code>class</code>关键字定义，类的主体就是其<strong>主构造器</strong>。在类名后用圆括号列出主构造器参数列表。</li>
+                        <li><strong>成员变量的可见性</strong>:
+                            <ul>
+                                <li><strong>默认</strong>: Scala类中所有成员的默认可见性为<strong>公有</strong>，任何作用域内都能直接访问。</li>
+                                <li><strong>private</strong>: 成员只对本类型和嵌套类型可见。对于private字段，Scala会提供一对getter和setter方法（如<code>value</code>和<code>value_=</code>）进行读写。</li>
+                                <li><strong>protected</strong>: 成员对本类型和其继承类型都可见。</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+             <div class="question-block">
+                <p class="question-title">7. <strong>简答题</strong>: 构造器如何定义和调用？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong></p>
+                    <ul>
+                        <li><strong>主构造器</strong>: Scala类的定义主体就是主构造器。在类名之后用圆括号列出参数列表。参数前可使用<code>val</code>或<code>var</code>关键字，Scala会自动为这些参数创建私有字段并提供访问方法。</li>
+                        <li><strong>辅助构造器 (auxiliary constructor)</strong>: 使用<code>this</code>关键字定义。每个辅助构造器的第一个表达式必须是调用一个此前已经定义<strong>的辅助构造器或主构造器</strong>，形式为<code>this(参数列表)</code>。</li>
+                        <li><strong>调用</strong>: 通过<code>new</code>关键字创建类的实例时，会调用相应的构造器。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p class="question-title">8. <strong>简答题</strong>: 特质的使用有哪些？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong></p>
+                    <ul>
+                        <li><strong>定义</strong>: 使用<code>trait</code>关键字定义特质，可以包含抽象成员和非抽象成员。</li>
+                        <li><strong>混入</strong>: 类可以使用<code>extends</code>或<code>with</code>关键字将特质混入其中。如果特质包含抽象成员，类必须提供具体实现，除非该类也被定义为抽象类。</li>
+                        <li><strong>多重继承</strong>: 一个类只能继承自一个超类，但可以混入多个特质（使用多个<code>with</code>），从而重用特质中的方法和字段，实现多重继承的功能。</li>
+                    </ul>
+                </div>
+            </div>
+
+             <div class="question-block">
+                <p class="question-title">9. <strong>简答题</strong>: 单例对象如何使用？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong></p>
+                    <ul>
+                        <li><strong>定义</strong>: 使用<code>object</code>关键字定义单例对象，实现类似Java静态成员的功能。</li>
+                        <li><strong>使用</strong>: 单例对象的使用与普通类实例类似，可以直接通过对象名调用其方法。例如，<code>Person.newPersonId()</code>。</li>
+                        <li><strong>伴生对象</strong>: 当一个单例对象和它的同名类一起出现时，它被称为伴生对象。类和伴生对象必须在同一个文件中，可以相互访问私有成员。</li>
+                        <li><strong>工厂方法 (apply方法)</strong>: 伴生对象中常定义<code>apply</code>方法作为工厂方法，用于无需<code>new</code>关键字即可创建类实例。</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="ch5.1">
+            <h2>《第5.1章 Spark基于内存的分布计算.pdf》思考题</h2>
+            <div class="question-block">
+                <p class="question-title">1. <strong>简答题</strong>: Spark的特点有哪些？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong> Spark的特点包括：</p>
+                    <ul>
+                        <li><strong>轻</strong>: Spark核心代码只有3万行。</li>
+                        <li><strong>快</strong>: 对小数据集可达到亚秒级延迟。</li>
+                        <li><strong>灵</strong>: 提供了不同层面的灵活性。</li>
+                        <li><strong>巧</strong>: 巧妙借力现有大数据组件。</li>
+                        <li><strong>高效</strong>: 通常比Hadoop MapReduce计算框架更高效。</li>
+                        <li><strong>通用</strong>: 适用于迭代计算、交互式查询和流数据处理。</li>
+                        <li><strong>一站式解决方案</strong>: 集批处理、实时流处理、交互式查询、图计算与机器学习于一体。</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="question-block">
+                <p class="question-title">2. <strong>简答题</strong>: Spark的应用场景有哪些？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong> Spark的应用场景包括：</p>
+                    <ul>
+                        <li><strong>批处理</strong>: 可用于ETL (抽取、转换、加载)。</li>
+                        <li><strong>机器学习</strong>: 可用于自动判断评论好坏等。</li>
+                        <li><strong>交互式分析</strong>: 可用于查询Hive数据仓库。</li>
+                        <li><strong>流处理</strong>: 可用于页面点击流分析、推荐系统、舆情分析等实时业务。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p class="question-title">3. <strong>简答题</strong>: Spark相对于MR的优势是什么？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong> Spark相对于MapReduce的优势主要体现在<strong>效率</strong>上。</p>
+                    <ul>
+                        <li><strong>速度更快</strong>: Spark在相同的数据量下通常比MapReduce耗时更短，吞吐率更高。例如，对于102TB数据，Spark耗时23分钟，而MapReduce耗时72分钟。</li>
+                        <li><strong>更适合迭代计算、交互式查询和流数据处理</strong>: MapReduce在应对大规模数据处理时需要频繁读写磁盘，而Spark基于内存计算，避免了频繁的磁盘IO，从而提高了效率。</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="question-block">
+                <p class="question-title">4. <strong>简答题</strong>: Spark运行的基本流程是什么？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong> Spark运行的基本流程如下：</p>
+                    <ol>
+                        <li><strong>构建运行环境</strong>: Driver创建一个SparkContext，进行资源申请、任务分配和监控。</li>
+                        <li><strong>资源分配</strong>: 资源管理器为Executor分配资源并启动Executor进程。</li>
+                        <li><strong>DAG图构建与调度</strong>: SparkContext根据RDD依赖关系构建DAG图，DAG图提交给DAGScheduler解析成Stage，然后把TaskSet提交给TaskScheduler处理。Executor向SparkContext申请Task，Task Scheduler将Task发放给Executor运行，并提供应用程序代码。</li>
+                        <li><strong>任务执行与结果返回</strong>: Task在Executor上运行，将执行结果反馈给TaskScheduler，再反馈给DAGScheduler，运行完毕后写入数据并释放所有资源。</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p class="question-title">5. <strong>简答题</strong>: RDD是Spark的灵魂，它有几个重要的特征，该如何理解？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong> RDD (Resilient Distributed Datasets) 即弹性分布式数据集，是Spark的灵魂，其重要特征包括：</p>
+                    <ul>
+                        <li><strong>只读的，可分区</strong>: RDD是不可变的，一旦创建就不能更改，但可以分成多个逻辑分区。</li>
+                        <li><strong>分布式数据集</strong>: 数据以分区的形式存储在集群中，可以在多个节点上并行处理。</li>
+                        <li><strong>内存优先</strong>: 默认存储在内存中，当内存不足时，会溢写到磁盘。这大大提高了迭代计算的效率。</li>
+                        <li><strong>血统机制 (Lineage)</strong>: RDD记录了其转换操作的序列（血统），当数据丢失时，可以通过重新计算血统中的父RDD来快速进行数据恢复，提供了容错性。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p class="question-title">6. <strong>简答题</strong>: RDD的操作算子分为几类，最主要的区别是什么？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong> Spark中的RDD操作大致分为四类：</p>
+                    <ol>
+                        <li><strong>创建操作 (Creation Operation)</strong>: 用于RDD的创建。</li>
+                        <li><strong>转换操作 (Transformation Operation)</strong>: 将一个RDD通过一系列操作转变成新的RDD。<strong>特点是惰性操作</strong>。</li>
+                        <li><strong>控制操作 (Control Operation)</strong>: 用于RDD的持久化，如<code>cache()</code>和<code>persist()</code>。</li>
+                        <li><strong>行动操作 (Action Operation)</strong>: 能够<strong>触发Spark运行的实际计算</strong>。</li>
+                    </ol>
+                    <p class="answer-text" style="margin-top: 10px;"><strong>最主要的区别</strong>在于<strong>转换操作是惰性执行的（Lazy Evaluation）</strong>，它们只构建执行计划，不触发实际计算；而<strong>行动操作会立即触发计算</strong>。</p>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p class="question-title">7. <strong>简答题</strong>: Spark 宽依赖窄依赖的区别是什么？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong></p>
+                    <ul>
+                        <li><strong>窄依赖 (Narrow Dependency)</strong>: 指的是每一个父RDD的Partition最多被子RDD的一个Partition使用。例如<code>map</code>、<code>filter</code>、<code>union</code>操作。</li>
+                        <li><strong>宽依赖 (Wide Dependency)</strong>: 指的是多个子RDD的Partition会依赖同一个父RDD的Partition。例如<code>groupByKey</code>、<code>reduceByKey</code>、<code>sortByKey</code>操作。</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="question-block">
+                <p class="question-title">8. <strong>简答题</strong>: Spark如何处理非结构化数据？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong> 资料中提到，<strong>RDD API对于非结构化数据处理具有独特的优势</strong>，例如文本流数据。Spark通过RDD的<code>textFile()</code>方法可以加载文本文件，然后通过<code>flatMap</code>等操作对非结构化数据进行处理，例如词频统计。虽然DataFrame和DataSet也支持，但RDD在底层操作和非结构化数据处理上更具优势。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="ch5.2">
+            <h2>《第5.2章-RDD编程.pdf》思考题</h2>
+            <div class="question-block">
+                <p class="question-title">1. <strong>简答题</strong>: 本章有很多RDD操作，RDD是什么？RDD的基本操作有哪些类型？分别有什么特点？对于这些操作，请思考起RDD结构图如何转换，输出结果是什么？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong></p>
+                    <ul>
+                        <li><strong>RDD是什么？</strong> RDD (Resilient Distributed Datasets) 即弹性分布式数据集，是一个<strong>只读的、可分区的分布式数据集</strong>。</li>
+                        <li><strong>RDD的基本操作有哪些类型？</strong> RDD操作分为四类:
+                            <ol>
+                                <li><strong>创建操作</strong>: 从内存集合或外部存储系统加载数据创建RDD。</li>
+                                <li><strong>转换操作 (Transformation)</strong>: 将一个RDD转换为新的RDD。<strong>特点是惰性执行</strong>。例如 <code>filter()</code>、<code>map()</code>、<code>flatMap()</code>、<code>reduceByKey()</code>等。</li>
+                                <li><strong>控制操作</strong>: 进行RDD持久化，如 <code>cache()</code> 和 <code>persist()</code>。</li>
+                                <li><strong>行动操作 (Action)</strong>: 触发Spark执行实际计算。<strong>特点是立即执行</strong>。例如 <code>count()</code>、<code>collect()</code>、<code>reduce(func)</code>等。</li>
+                            </ol>
+                        </li>
+                        <li style="margin-top: 15px;"><strong>对于这些操作，请思考起RDD结构图如何转换，输出结果是什么？</strong> 本章提供了大量RDD操作的<strong>具体实例代码和相应的运行结果</strong>，以及<strong>图示解释RDD在转换操作中的结构变化</strong>，例如 <code>filter()</code>、<code>map()</code>、<code>flatMap()</code>、<code>reduceByKey()</code> 的示意图。读者可以根据这些示例理解每种操作如何改变RDD的内部结构和产生最终输出。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="ch5.3">
+            <h2>《第5.3章-Spark SQL.pdf》思考题</h2>
+            <div class="question-block">
+                <p class="question-title">1. <strong>简答题</strong>: DataFrame的概念是什么？表现形式是什么？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong></p>
+                    <ul>
+                        <li><strong>概念</strong>: DataFrame是一个<strong>不可变弹性分布式数据集</strong>，它在RDD的基础上增加了<strong>数据的结构信息（即schema）</strong>，类似二维表格。</li>
+                        <li><strong>表现形式</strong>: 类似于<strong>带表头（schema）的二维表格</strong>，例如：
+                            <pre><code>ID:String Name:String Age:int
+1 张三 23
+2 李四 35</code></pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="question-block">
+                <p class="question-title">2. <strong>简答题</strong>: DataSet的概念是什么？表现形式是什么？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong></p>
+                    <ul>
+                        <li><strong>概念</strong>: DataSet是<strong>DataFrame的特例</strong> (<code>DataFrame=Dataset[Row]</code>)。DataSet是<strong>强类型</strong>的，整合了RDD和DataFrame的优点。</li>
+                        <li><strong>表现形式</strong>: 可以是表格形式，也可以是直接以<strong>强类型的JVM对象</strong>形式存在，例如：
+                            <pre><code>Value:People[age:bigint,id:bigint,name:string]
+People(id=1,name=“张三”,age=23
+People(id=2,name=“李四”,age=35</code></pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="question-block">
+                <p class="question-title">3. <strong>简答题</strong>: Spark SQL的特点是什么？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong> Spark SQL的特点包括：</p>
+                    <ul>
+                        <li><strong>容易整合（集成）</strong>: SQL查询和Spark程序可以无缝集成。</li>
+                        <li><strong>统一的数据访问方式</strong>: 以相同方式连接到任何数据源。</li>
+                        <li><strong>兼容Hive</strong>: 支持HiveQL语法、Hive SerDes和UDF。</li>
+                        <li><strong>标准的数据库连接</strong>: 支持JDBC或ODBC连接。</li>
+                        <li><strong>优化</strong>: 通过Spark Catalyst Optimiser进行查询优化。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p class="question-title">4. <strong>简答题</strong>: DataFrame、DataSet和RDD的区别是什么？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong></p>
+                    <ul>
+                        <li><strong>共同点</strong>: 三者都是<strong>不可变</strong>的、具有<strong>分区</strong>的数据集。</li>
+                        <li><strong>主要区别</strong>:
+                            <ul>
+                                <li><strong>模式 (Schema)</strong>: RDD<strong>没有</strong>，DataFrame和DataSet<strong>有</strong>。</li>
+                                <li><strong>查询优化器</strong>: RDD<strong>没有</strong>，DataFrame和DataSet<strong>有</strong>。</li>
+                                <li><strong>API级别</strong>: RDD是<strong>底层API</strong>，DataFrame和DataSet是<strong>高层次API</strong>。</li>
+                                <li><strong>类型安全</strong>: RDD和DataSet是<strong>类型安全</strong>的，DataFrame<strong>不是</strong>。</li>
+                                <li><strong>错误检测</strong>: 分析错误DataFrame在<strong>运行时</strong>检测，RDD和DataSet在<strong>编译时</strong>检测。</li>
+                                <li><strong>数据存储</strong>: DataFrame和DataSet可采用Kryo序列化和堆外内存，运行更快。</li>
+                            </ul>
+                        </li>
+                        <li style="margin-top: 15px;"><strong>优缺点概括</strong>:
+                             <ul>
+                                <li><strong>RDD</strong>: 优点是灵活，类型安全；缺点是序列化和GC开销大。</li>
+                                <li><strong>DataFrame</strong>: 优点是处理结构化数据方便，有优化；缺点是不支持编译时类型安全。</li>
+                                <li><strong>DataSet</strong>: 整合了RDD和DataFrame的优点，是未来趋势。</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="ch5.4">
+            <h2>《第5.4章-Spark Streaming.pdf》思考题</h2>
+            <div class="question-block">
+                <p class="question-title">1. <strong>简答题</strong>: Spark Streaming设计和基本原理？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong></p>
+                    <ul>
+                        <li><strong>设计</strong>: 最主要的抽象是 <strong>DStream (Discretized Stream，离散化数据流)</strong>，表示连续的数据流。</li>
+                        <li><strong>基本原理</strong>: 将实时输入数据流以<strong>时间片为单位进行拆分</strong>，然后Spark引擎以<strong>类似批处理的方式处理每个时间片数据</strong>。每个时间片数据会转换为Spark中的<strong>RDD</strong>。</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="question-block">
+                <p class="question-title">2. <strong>简答题</strong>: SparkStreaming和Storm的对比和区别有哪些？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>对比点</th>
+                                <th>Storm</th>
+                                <th>Spark Streaming</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>实时计算模型</strong></td>
+                                <td><strong>纯实时</strong>，来一条数据，处理一条数据</td>
+                                <td><strong>准实时</strong>，对一个时间段内的数据收集起来作为RDD处理</td>
+                            </tr>
+                            <tr>
+                                <td><strong>实时计算延迟度</strong></td>
+                                <td><strong>毫秒级</strong></td>
+                                <td><strong>秒级</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>吞吐量</strong></td>
+                                <td><strong>低</strong></td>
+                                <td><strong>高</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>事务机制</strong></td>
+                                <td>支持完善</td>
+                                <td>支持，但不够完善</td>
+                            </tr>
+                            <tr>
+                                <td><strong>容错性</strong></td>
+                                <td>Zookeeper, Acker，非常强</td>
+                                <td>Checkpoint, WAL，一般</td>
+                            </tr>
+                            <tr>
+                                <td><strong>动态调整并行度</strong></td>
+                                <td>支持</td>
+                                <td>不支持</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                     <p class="answer-text" style="margin-top: 15px;"><strong>主要区别</strong>: Spark Streaming无法实现毫秒级流计算，而Storm可以。Spark Streaming能同时兼容批量和实时数据处理的逻辑和算法。</p>
+                </div>
+            </div>
+            
+            <div class="question-block">
+                <p class="question-title">3. <strong>简答题</strong>: SparkStreaming的工作机制是什么？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong> 在Spark Streaming中，有一个<strong>Receiver组件</strong>，它作为一个长期运行的task运行在Executor上。每个Receiver负责一个input DStream（例如文件流、套接字流或Kafka输入流等）。Spark Streaming通过input DStream与外部数据源连接并读取相关数据。</p>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p class="question-title">4. <strong>简答题</strong>: SparkStreaming程序的基本步骤是什么？</p>
+                <div class="answer">
+                    <p class="answer-text"><strong class="label">答案:</strong> 编写Spark Streaming程序的基本步骤是：</p>
+                    <ol>
+                        <li>通过创建输入DStream来<strong>定义输入源</strong>。</li>
+                        <li>通过对DStream应用<strong>转换操作和输出操作来定义流计算</strong>。</li>
+                        <li>使用<code>streamingContext.start()</code>来<strong>开始接收数据和处理流程</strong>。</li>
+                        <li>通过<code>streamingContext.awaitTermination()</code>方法来<strong>等待处理结束</strong>。</li>
+                        <li>可以通过<code>streamingContext.stop()</code>来<strong>手动结束流计算进程</strong>。</li>
+                    </ol>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+</body>
+</html>
