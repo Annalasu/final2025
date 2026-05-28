@@ -6,4 +6,3 @@
 - https://annalasu.github.io/final2025/xmgl.html 项目管理简答
 
 ---
-上面链接后加上文件名查看在线版本
